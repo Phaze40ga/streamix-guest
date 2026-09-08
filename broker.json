@@ -1,0 +1,8 @@
+{
+  "host": "statewide-character-requiring-leisure.trycloudflare.com",
+  "port": 443,
+  "path": "/",
+  "secure": true,
+  "updatedAt": "2026-09-08T05:05:52Z",
+  "note": "Streamix PeerServer via Cloudflare tunnel. Regenerated when the tunnel hostname rotates."
+}
