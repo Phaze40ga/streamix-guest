@@ -11,8 +11,8 @@
     />
     <meta http-equiv="Permissions-Policy" content="camera=(self), microphone=(self)" />
     <title>Join the show — Streamix Studio</title>
-    <script type="module" crossorigin src="./assets/index-PBRgFbZj.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BIJph5s1.css">
+    <script type="module" crossorigin src="./assets/index-Ci-tzYIf.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CF8eUmUK.css">
   </head>
   <body>
     <main id="app" class="app">
@@ -65,6 +65,16 @@
           <button id="leave" class="ghost danger" hidden>Leave</button>
         </div>
         <p id="message" class="message"></p>
+      </section>
+
+      <section class="live-chat" id="liveChat" hidden>
+        <h2>Live chat</h2>
+        <div class="chat-list" data-chat-list role="log" aria-live="polite"></div>
+        <div class="chat-compose">
+          <input data-chat-input type="text" maxlength="200" placeholder="Say something…" autocomplete="off" disabled />
+          <button data-chat-send type="button" disabled>Send</button>
+        </div>
+        <p class="chat-hint">Messages go to the host instantly. Keep it friendly.</p>
       </section>
 
       <footer class="foot">
