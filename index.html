@@ -11,8 +11,8 @@
     />
     <meta http-equiv="Permissions-Policy" content="camera=(self), microphone=(self)" />
     <title>Join the show — Streamix Studio</title>
-    <script type="module" crossorigin src="./assets/index-DNMNEoN0.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CF8eUmUK.css">
+    <script type="module" crossorigin src="./assets/index-C6B0vS8O.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-GBtknS3d.css">
   </head>
   <body>
     <main id="app" class="app">
@@ -28,7 +28,7 @@
           <div class="tile-hint" id="meHint">Allow camera &amp; microphone to see your preview</div>
         </div>
         <div class="tile host">
-          <video id="hostVideo" autoplay playsinline></video>
+          <video id="hostVideo" autoplay playsinline muted></video>
           <div class="tag" id="hostTag">Host</div>
           <div class="tile-hint" id="hostHint">The host's picture appears here once you're admitted</div>
         </div>
@@ -60,11 +60,15 @@
         <div class="buttons">
           <button id="allowMedia" class="primary" type="button" hidden>Allow camera &amp; mic</button>
           <button id="join" class="primary" disabled>Join</button>
+          <button id="retry" class="ghost" type="button" hidden>Retry</button>
           <button id="toggleMic" class="ghost" title="Mute microphone" disabled>Mute</button>
           <button id="toggleCam" class="ghost" title="Turn camera off" disabled>Camera off</button>
+          <button id="toggleSpeaker" class="ghost" type="button" title="Play host audio on this phone’s speaker (can cause echo)" hidden>Listen on speaker</button>
           <button id="leave" class="ghost danger" hidden>Leave</button>
         </div>
         <p id="message" class="message"></p>
+        <p id="tip" class="tip" hidden>Headphones recommended when speaker is on — otherwise your mic may pick up the host and create echo.</p>
+        <pre id="debug" class="debug" hidden></pre>
       </section>
 
       <section class="live-chat" id="liveChat" hidden>

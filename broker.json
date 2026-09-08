@@ -3,6 +3,12 @@
   "port": 443,
   "path": "/",
   "secure": true,
-  "updatedAt": "2026-09-08T05:23:53Z",
-  "note": "Streamix PeerServer via Cloudflare tunnel. Regenerated when the tunnel hostname rotates."
+  "updatedAt": "2026-09-08T06:33:43Z",
+  "note": "Streamix PeerServer via Cloudflare tunnel + coturn TURN. Regenerated when the tunnel hostname rotates.",
+  "ice": {
+    "stunUrl": "stun:stun.l.google.com:19302",
+    "turnUrl": "turn:31.220.104.13:3478",
+    "turnUsername": "streamix",
+    "turnCredential": "54b9b76e68cfe1e0c00f99008a0441ff"
+  }
 }
