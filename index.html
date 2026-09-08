@@ -11,8 +11,8 @@
     />
     <meta http-equiv="Permissions-Policy" content="camera=(self), microphone=(self)" />
     <title>Join the show — Streamix Studio</title>
-    <script type="module" crossorigin src="./assets/index-BWkVlyKP.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Dulsffhz.css">
+    <script type="module" crossorigin src="./assets/index-BsjGWfi3.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-9eSkDdyG.css">
   </head>
   <body>
     <main id="app" class="app">
@@ -34,6 +34,16 @@
         </div>
       </section>
 
+      <section class="invite-needed" id="inviteNeeded" hidden>
+        <h1>Waiting for an invite link</h1>
+        <p>
+          This page alone cannot find the host. Open the full link from Streamix Studio
+          (<strong>Guests → Open guest room</strong> → Copy link or scan the QR). It ends with
+          <code>#r=streamix-…</code>.
+        </p>
+        <p class="muted">Works in Chrome and Safari on phone or desktop — use the invite, not this bare site.</p>
+      </section>
+
       <section class="controls" id="controls">
         <label class="field">
           <span>Your name</span>
@@ -48,6 +58,7 @@
           <select id="mic"></select>
         </label>
         <div class="buttons">
+          <button id="allowMedia" class="primary" type="button" hidden>Allow camera &amp; mic</button>
           <button id="join" class="primary" disabled>Join</button>
           <button id="toggleMic" class="ghost" title="Mute microphone" disabled>Mute</button>
           <button id="toggleCam" class="ghost" title="Turn camera off" disabled>Camera off</button>
@@ -59,7 +70,7 @@
       <footer class="foot">
         <span id="roomLabel"></span>
         <span id="certLine" class="muted" hidden></span>
-        <span class="muted">Open this link in Safari or Chrome, allow camera &amp; microphone, then Join. The host must have the guest room open in Streamix Studio. Audio and video go directly to the host over WebRTC.</span>
+        <span class="muted">Open the invite in Safari or Chrome (not an in-app browser), tap Allow camera &amp; mic, then Join. The host must have the guest room open in Streamix Studio.</span>
       </footer>
     </main>
   </body>
