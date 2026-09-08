@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="color-scheme" content="dark" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: mediastream:; connect-src 'self' wss://0.peerjs.com https://0.peerjs.com; font-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'" />
+    <meta http-equiv="Permissions-Policy" content="camera=(self), microphone=(self)" />
+    <title>Join the show — Streamix Studio</title>
+    <script type="module" crossorigin src="./assets/index-Bl5Wobti.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Dulsffhz.css">
+  </head>
+  <body>
+    <main id="app" class="app">
+      <header class="top">
+        <div class="brand"><span class="dot"></span> Streamix Studio</div>
+        <div id="status" class="status" data-state="idle">Getting ready…</div>
+      </header>
+
+      <section class="stage">
+        <div class="tile me">
+          <video id="preview" autoplay playsinline muted></video>
+          <div class="tag" id="meTag">You</div>
+          <div class="tile-hint" id="meHint">Allow camera &amp; microphone to see your preview</div>
+        </div>
+        <div class="tile host">
+          <video id="hostVideo" autoplay playsinline></video>
+          <div class="tag" id="hostTag">Host</div>
+          <div class="tile-hint" id="hostHint">The host's picture appears here once you're admitted</div>
+        </div>
+      </section>
+
+      <section class="controls" id="controls">
+        <label class="field">
+          <span>Your name</span>
+          <input id="name" type="text" maxlength="40" autocomplete="nickname" placeholder="How should we introduce you?" />
+        </label>
+        <label class="field">
+          <span>Camera</span>
+          <select id="cam"></select>
+        </label>
+        <label class="field">
+          <span>Microphone</span>
+          <select id="mic"></select>
+        </label>
+        <div class="buttons">
+          <button id="join" class="primary" disabled>Join</button>
+          <button id="toggleMic" class="ghost" title="Mute microphone" disabled>Mute</button>
+          <button id="toggleCam" class="ghost" title="Turn camera off" disabled>Camera off</button>
+          <button id="leave" class="ghost danger" hidden>Leave</button>
+        </div>
+        <p id="message" class="message"></p>
+      </section>
+
+      <footer class="foot">
+        <span id="roomLabel"></span>
+        <span id="certLine" class="muted" hidden></span>
+        <span class="muted">Open this link in Safari or Chrome, allow camera &amp; microphone, then Join. The host must have the guest room open in Streamix Studio. Audio and video go directly to the host over WebRTC.</span>
+      </footer>
+    </main>
+  </body>
+</html>

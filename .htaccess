@@ -1,0 +1,9 @@
+# Streamix guest page — allow camera/mic and PeerJS broker
+<IfModule mod_headers.c>
+  Header always unset Permissions-Policy
+  Header always set Permissions-Policy "camera=(self), microphone=(self), display-capture=()"
+  Header always unset Content-Security-Policy
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: mediastream:; connect-src 'self' wss://0.peerjs.com https://0.peerjs.com; font-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"
+  Header always set Referrer-Policy "no-referrer"
+</IfModule>
+DirectoryIndex index.html
