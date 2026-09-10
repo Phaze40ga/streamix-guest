@@ -5,36 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="referrer" content="no-referrer" />
     <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#070B12" />
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: mediastream:; connect-src 'self' wss: https: ws:; font-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"
     />
     <meta http-equiv="Permissions-Policy" content="camera=(self), microphone=(self)" />
     <title>Join the show — Streamix Studio</title>
-    <script type="module" crossorigin src="./assets/index-C6B0vS8O.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-GBtknS3d.css">
+    <link rel="icon" href="./mark.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./mark.png" />
+    <script type="module" crossorigin src="./assets/index-BjmXHHUM.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BPcfi3gj.css">
   </head>
   <body>
     <main id="app" class="app">
       <header class="top">
-        <div class="brand"><span class="dot"></span> Streamix Studio</div>
-        <div id="status" class="status" data-state="idle">Getting ready…</div>
+        <div class="brand">
+          <img class="brand-mark" src="./mark.png" width="28" height="28" alt="" draggable="false" />
+          <div class="brand-copy">
+            <span class="brand-name">Streamix</span>
+            <span class="brand-sub">Studio</span>
+          </div>
+        </div>
+        <div id="status" class="status" data-state="idle" title="Tap for connection details">Getting ready…</div>
       </header>
 
-      <section class="stage">
-        <div class="tile me">
-          <video id="preview" autoplay playsinline muted></video>
-          <div class="tag" id="meTag">You</div>
-          <div class="tile-hint" id="meHint">Allow camera &amp; microphone to see your preview</div>
-        </div>
-        <div class="tile host">
-          <video id="hostVideo" autoplay playsinline muted></video>
-          <div class="tag" id="hostTag">Host</div>
-          <div class="tile-hint" id="hostHint">The host's picture appears here once you're admitted</div>
-        </div>
-      </section>
-
       <section class="invite-needed" id="inviteNeeded" hidden>
+        <div class="invite-icon" aria-hidden="true">
+          <img src="./mark.png" width="40" height="40" alt="" draggable="false" />
+        </div>
         <h1>Waiting for an invite link</h1>
         <p>
           This page alone cannot find the host. Open the full link from Streamix Studio
@@ -44,7 +43,32 @@
         <p class="muted">Works in Chrome and Safari on phone or desktop — use the invite, not this bare site.</p>
       </section>
 
-      <section class="controls" id="controls">
+      <section class="stage">
+        <div class="tile me">
+          <div class="tile-frame">
+            <video id="preview" autoplay playsinline muted></video>
+            <div class="tile-hatch" aria-hidden="true"></div>
+            <div class="tile-hint" id="meHint">Allow camera &amp; microphone to see your preview</div>
+            <span class="tile-badge" data-badge="me">Local</span>
+            <div class="tile-chrome">
+              <span class="tag" id="meTag">You</span>
+            </div>
+          </div>
+        </div>
+        <div class="tile host">
+          <div class="tile-frame">
+            <video id="hostVideo" autoplay playsinline muted></video>
+            <div class="tile-hatch" aria-hidden="true"></div>
+            <div class="tile-hint" id="hostHint">The host's picture appears here once you're admitted</div>
+            <span class="tile-badge" data-badge="host">Waiting</span>
+            <div class="tile-chrome">
+              <span class="tag" id="hostTag">Host</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls panel" id="controls">
         <label class="field">
           <span>Your name</span>
           <input id="name" type="text" maxlength="40" autocomplete="nickname" placeholder="How should we introduce you?" />
@@ -71,18 +95,21 @@
         <pre id="debug" class="debug" hidden></pre>
       </section>
 
-      <section class="live-chat" id="liveChat" hidden>
-        <h2>Live chat</h2>
-        <div class="chat-list" data-chat-list role="log" aria-live="polite"></div>
+      <section class="live-chat panel" id="liveChat" hidden>
+        <div class="chat-head">
+          <span class="accent-bar" aria-hidden="true"></span>
+          <h2>Live chat</h2>
+        </div>
+        <div class="chat-list well" data-chat-list role="log" aria-live="polite"></div>
         <div class="chat-compose">
           <input data-chat-input type="text" maxlength="200" placeholder="Say something…" autocomplete="off" disabled />
-          <button data-chat-send type="button" disabled>Send</button>
+          <button data-chat-send class="primary" type="button" disabled>Send</button>
         </div>
         <p class="chat-hint">Messages go to the host instantly. Keep it friendly.</p>
       </section>
 
       <footer class="foot">
-        <span id="roomLabel"></span>
+        <span id="roomLabel" class="room-label"></span>
         <span id="certLine" class="muted" hidden></span>
         <span class="muted">Open the invite in Safari or Chrome (not an in-app browser), tap Allow camera &amp; mic, then Join. The host must have the guest room open in Streamix Studio.</span>
       </footer>
